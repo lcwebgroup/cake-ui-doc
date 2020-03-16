@@ -3,7 +3,7 @@ import {Route, NavLink} from "react-router-dom";
 import { Layout } from 'antd';
 import Loadable from "react-loadable";
 import "../index.less"
-import MyLoadingComponent from "../components/loadComponents";
+import MyLoadingComponent from "~/components/loadComponents";
 
 const { Header } = Layout;
 const Component = Loadable({
@@ -27,7 +27,7 @@ export default class Contanier extends React.Component{
   
     componentDidMount(){
        const url = document.location.href.split("#")[1];
-        if (url == "/" ) {
+        if (url === "/" ) {
             this.props.history.push("/doc")
         }
     }
