@@ -10,44 +10,44 @@ const { Sider } = Layout;
 
 const menus =[
     {
-        url:"searchForm",
-        text:"表单搜索"
+        url:"form",
+        text:"Form"
     },
     {
         url:"popForm",
-        text:"弹出表单"
+        text:"PopForm"
     },
     {
-        url:"form",
-        text:"表单"
+        url:"searchForm",
+        text:"SearchForm"
     },
     {
         url:"table",
-        text:"表格"
+        text:"TableData"
     },
     {
         url:"tagGroup",
-        text:"tag标签"
+        text:"CheckTagGroup"
     },
     {
         url:"draggle",
-        text:"拖拽"
+        text:"DraggableModal"
     },
     {
         url:"editor",
-        text:"编辑器"
+        text:"WangEditor"
     },
     {
         url:"transferTag",
-        text:"穿梭框"
+        text:"TransferTag"
     },
     {
         url:"transferSelectTag",
-        text:"穿梭框二"
+        text:"TransferSelectTag"
     },
     {
         url:"photoView",
-        text:"查看图片"
+        text:"PhotoView"
     }
 ];
 const echartsMenu = [
@@ -73,28 +73,28 @@ export default class AsideMenu extends React.Component{
         const {match} = this.props;
         return   <Sider width={200} style={{ background: '#fff' }}>
                     <Menu
-                    mode="inline"
-                    defaultSelectedKeys={['0']}
-                    defaultOpenKeys={['sub0']}
-                    style={{ height: '100%', borderRight: 0 }}
+                        mode="inline"
+                        defaultSelectedKeys={['0']}
+                        defaultOpenKeys={['sub0']}
+                        style={{ height: '100%', borderRight: 0 }}
                     >
-                     <SubMenu key="sub0" title={<span><Icon type="table" />开发组件</span>}>
-                         <Menu.Item key={0} ><Link to={`${match.url}/payAttention`}>注意事项</Link></Menu.Item>
-                    </SubMenu> 
-                    <SubMenu key="sub1" title={<span><Icon type="table" />范例</span>}>
-                        {
-                            menus.map((item, index)=>{
-                             return <Menu.Item key={index} ><Link to={`${match.url}/${item.url}`}>{item.text}</Link></Menu.Item>
-                            })
-                        }
-                    </SubMenu> 
-                    <SubMenu key="sub2" title={<span><Icon type="pie-chart" />图表</span>}>
-                        {
-                            echartsMenu.map((item, index)=>{
-                             return <Menu.Item key={index} ><Link to={`${match.url}/${item.url}`}>{item.text}</Link></Menu.Item>
-                            })
-                        }
-                    </SubMenu> 
+                        <SubMenu key="开发组件" title={<span><Icon type="tag" />开发组件</span>}>
+                            <Menu.Item key="注意事项" ><Link to={`${match.url}/payAttention`}>注意事项</Link></Menu.Item>
+                        </SubMenu> 
+                        <SubMenu key="范例" title={<span><Icon type="table" />范例</span>}>
+                            {
+                                menus.map((item, index)=>{
+                                    return <Menu.Item key={item.text} ><Link to={`${match.url}/${item.url}`}>{item.text}</Link></Menu.Item>
+                                })
+                            }
+                        </SubMenu> 
+                        <SubMenu key="图表" title={<span><Icon type="pie-chart" />图表</span>}>
+                            {
+                                echartsMenu.map((item, index)=>{
+                                    return <Menu.Item key={item.text} ><Link to={`${match.url}/${item.url}`}>{item.text}</Link></Menu.Item>
+                                })
+                            }
+                        </SubMenu> 
                     </Menu>
                 </Sider>
     }

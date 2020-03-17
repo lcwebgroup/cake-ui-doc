@@ -15,17 +15,6 @@ ReactDOM.render(<div>
     </div>,
     document.getElementById('root')
 );
-// class App extends React.Component{
-//     render(){
-//         return <HashRouter>
-//                       <Switch>
-//                           <Route path="/" component={Contanier}></Route>
-//                       </Switch>
-//                 </HashRouter>
-//     }
-// }
-// ReactDOM.render(<App />, document.getElementById('root'));
-
 
 serviceWorker.unregister();
 

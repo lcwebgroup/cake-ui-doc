@@ -6,12 +6,13 @@ import "../index.less"
 import MyLoadingComponent from "~/components/loadComponents";
 
 const { Header } = Layout;
-const Component = Loadable({
-    loader: () => import('./Component'),
+
+const Start = Loadable({
+    loader: () => import('./Start'),
     loading: MyLoadingComponent
 })
-const Doc = Loadable({
-    loader: () => import('./Docs'),
+const Component = Loadable({
+    loader: () => import('./Component'),
     loading: MyLoadingComponent
 })
 const ReactCli = Loadable({
@@ -28,7 +29,7 @@ export default class Contanier extends React.Component{
     componentDidMount(){
        const url = document.location.href.split("#")[1];
         if (url === "/" ) {
-            this.props.history.push("/doc")
+            this.props.history.push("/Start")
         }
     }
 
@@ -38,14 +39,14 @@ export default class Contanier extends React.Component{
                     <Header className="header">
                        <div className="logo" ><span></span>cake-ui-doc</div>
                        <div className="headMenu">
-                           <NavLink to="/doc" >组件文档</NavLink>
-                           <NavLink to="/component/payAttention">组件</NavLink>
+                           <NavLink to="/Start" >起步</NavLink>
+                           <NavLink to="/Component/payAttention">组件文档</NavLink>
                            <NavLink to="/ReactCli/cli">脚手架</NavLink>
                            <NavLink to="/LearnGo">学习方向</NavLink>
                        </div>
                     </Header>
-                    <Route path="/doc" component={Doc} />
-                    <Route path="/component" component={Component} />
+                    <Route path="/Start" component={Start} />
+                    <Route path="/Component" component={Component} />
                     <Route path="/reactCli" component={ReactCli} />
                     <Route path="/LearnGo" component={LearnGo} />
                 </Layout>
