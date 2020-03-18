@@ -15,7 +15,7 @@ const menus =[
     },
     {
         url:"autoConfig",
-        text:"自动化配置"
+        text:"自动化接口"
     },
     {
         url:"autoFile",
