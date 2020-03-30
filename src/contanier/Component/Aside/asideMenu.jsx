@@ -48,7 +48,8 @@ const menus =[
     {
         url:"photoView",
         text:"PhotoView"
-    }
+    },
+   
 ];
 const echartsMenu = [
     {

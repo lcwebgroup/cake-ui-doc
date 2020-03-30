@@ -9,7 +9,7 @@ class PhotoViewDemo extends Component {
     render() {
         return (
             <div >
-                <PhotoView detailText={"<p></p><div class=\"media-wrap image-wrap\"><img src=\"http://192.168.7.146:8080/data/getData?reqCode=10002&amp;img_key=51639790E0CF4354BCD1053F107BDC1A\"/></div><p></p>"} />
+                <PhotoView detailText={"<div class=\"media-wrap image-wrap\"><img src=\"https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg\"/></div>"} />
             </div>
         );
     }
@@ -23,12 +23,10 @@ class PhotoViewDemo extends CodeStatus{
         const { isCodeCollpase } = this.state
         return (
             <div >
-                <PhotoView detailText={`<p></p>
-                                           <div class=\"media-wrap image-wrap\">
-                                                <img src=\"https://img5.duitang.com/uploads/item/201303/09/20130309193622_XYZyt.jpeg\"/>
-                                           </div>
-                                        <p></p>`} />
-                 {this.controlCode()}
+                <PhotoView detailText={`<div class=\"media-wrap image-wrap\">
+                                            <image src=\"https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg\" />
+                                        </div>`} />
+                {this.controlCode()}
                 <CodeLight isCodeCollpase={isCodeCollpase} codeString={codeString}/>
             </div>
         );
